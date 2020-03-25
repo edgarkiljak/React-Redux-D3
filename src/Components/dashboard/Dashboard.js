@@ -9,10 +9,10 @@ export default class Dashboard extends Component {
         <div className="dashboard-side">
           <div className="dashboard-side-item-container">
             <NavLink to="/" className="dashboard-side-item">
-              Set 1
+              套裝1
             </NavLink>
             <NavLink to="/" className="dashboard-side-item">
-              Set 2
+              套裝2
             </NavLink>
           </div>
         </div>
