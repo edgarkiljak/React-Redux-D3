@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import './styles/index.css';
 
 class SignIn extends Component {
-  cosnstructor() {
-    this.state = {
-      o: 1
-    };
-  }
+  state = {
+    email: '',
+    password: ''
+  };
 
   handleChange = e => {
-    console.log(e);
+    this.setState({ [e.target.id]: e.target.value });
   };
 
   handleSubmit = e => {
-    console.log(e);
+    e.preventDefault();
+    console.log(this.state);
   };
 
   render() {
@@ -28,7 +28,7 @@ class SignIn extends Component {
               type="email"
               id="email"
               placeholder="email@address.com"
-              onChage={this.handleChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <div className="input-field">
@@ -37,7 +37,7 @@ class SignIn extends Component {
               type="password"
               id="password"
               placeholder="wehopeitsnot123"
-              onChage={this.handleChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <div className="input-field">
