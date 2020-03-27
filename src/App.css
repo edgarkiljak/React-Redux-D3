@@ -15,33 +15,3 @@ body {
   height: 100vh;
   width: 100%;
 }
-
-/* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: none;
-  -webkit-text-fill-color: white;
-
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-::-webkit-input-placeholder {
-  /* Edge */
-  -webkit-text-fill-color: white;
-  opacity: 0.5;
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  -webkit-text-fill-color: white;
-  opacity: 0.5;
-}
-
-::placeholder {
-  -webkit-text-fill-color: white;
-  opacity: 0.5;
-}

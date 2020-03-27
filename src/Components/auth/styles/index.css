@@ -5,11 +5,11 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  background: white;
+  background: #fafafa;
 }
 
 .black-signin-wall-container form {
-  color: #fafafa;
+  color: #000000;
   background-image: linear-gradient(
     to right top,
     #d16ba5,
@@ -27,6 +27,7 @@
   );
   padding: 100px;
   position: absolute;
+  font-weight: bold;
   left: 50%;
   top: 10%;
   transform: translate(-50%);
@@ -60,12 +61,12 @@
 }
 
 input {
-  color: #fafafa;
+  color: black;
   background-color: transparent;
   outline: none;
   margin-left: 6px;
   border: none;
-  border-bottom: 1px solid #00ded0 !important;
+  border-bottom: 1px solid black !important;
 }
 
 input:focus {
@@ -74,17 +75,18 @@ input:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
-  border-bottom: 1px solid #00ded0 !important;
+  border-bottom: 1px solid black !important;
 }
 
 .btn {
   line-height: 1rem;
-  color: white;
+  color: #000000;
   padding: 5px 20px;
   min-height: 36px;
   border-radius: 24px;
   outline: none;
   font-size: 1rem;
+  font-weight: bold;
   background-color: transparent;
   border: 1px solid #00ded0;
 }
@@ -107,28 +109,28 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none;
-  -webkit-text-fill-color: white;
-
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 ::-webkit-input-placeholder {
   /* Edge */
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: #000000;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: #000000;
 }
 
 ::placeholder {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: #000000;
 }
 
 @media (max-width: 700px) {
   .black-signin-wall-container form {
-    color: #fafafa;
+    color: #000000;
     background-color: black;
     padding: 60px;
     position: absolute;
