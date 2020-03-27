@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles/index.css';
 import { connect } from 'react-redux';
 import { signIn } from '../../Redux/actions/authActions';
+import { Redirect } from 'react-router-dom';
 class SignIn extends Component {
   state = {
     email: '',
@@ -18,8 +19,14 @@ class SignIn extends Component {
   };
 
   render() {
-    const { authError } = this.props;
-    const warningSign = '⚠️';
+    const { authError, authStatus } = this.props;
+    const warningSign = (
+      <span>
+        <br />
+        **Please check your username and password
+      </span>
+    );
+    if (authStatus.uid) return <Redirect to="/dashboard" />;
     return (
       <div className="black-signin-wall-container">
         <form onSubmit={this.handleSubmit} className="black-signin-wall-form">
@@ -30,7 +37,7 @@ class SignIn extends Component {
             <input
               type="email"
               id="email"
-              placeholder="e.g. email@address.com"
+              placeholder="e.g. test@test.co.uk"
               onChange={this.handleChange}
             ></input>
           </div>
@@ -46,7 +53,8 @@ class SignIn extends Component {
           <div className="status">
             {authError ? (
               <p>
-                {authError} {warningSign}
+                *{authError} ⚠️
+                {warningSign}
               </p>
             ) : null}
           </div>
@@ -63,7 +71,7 @@ const mapStateToPros = state => {
   const { auth } = state;
   console.log(state.auth);
   console.log(auth.authError);
-  return { authError: auth.authError };
+  return { authError: auth.authError, authStatus: state.firebase.auth };
 };
 
 const mapDispatchToProps = dispatch => {

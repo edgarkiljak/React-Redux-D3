@@ -98,7 +98,9 @@ input:focus {
 }
 
 .status {
-  color: black;
+  color: red;
+  font-size: 10px;
+  font-weight: lighter;
 }
 
 /* Change Autocomplete styles in Chrome*/
