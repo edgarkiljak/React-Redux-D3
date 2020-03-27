@@ -5,7 +5,11 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  /* background: #00ded0; fallback for old browsers */
+  background: white;
+}
+
+.black-signin-wall-container form {
+  color: #fafafa;
   background-image: linear-gradient(
     to right top,
     #d16ba5,
@@ -21,11 +25,6 @@
     #46eefa,
     #00ded0
   );
-}
-
-.black-signin-wall-container form {
-  color: #fafafa;
-  background-color: black;
   padding: 100px;
   position: absolute;
   left: 50%;
@@ -33,16 +32,20 @@
   transform: translate(-50%);
 }
 
+.sign-up {
+  top: 5% !important;
+}
+
 .close-btn {
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 20px;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .close-btn:hover {
-  color: #00ded0;
+  color: black;
   transform: translate(0) rotate(90deg);
 }
 
@@ -62,7 +65,7 @@ input {
   outline: none;
   margin-left: 6px;
   border: none;
-  border-bottom: 1px solid #00ded0;
+  border-bottom: 1px solid #00ded0 !important;
 }
 
 input:focus {
@@ -71,7 +74,7 @@ input:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
-  border-bottom: 1px solid #00ded0;
+  border-bottom: 1px solid #00ded0 !important;
 }
 
 .btn {
@@ -80,6 +83,7 @@ input:focus {
   padding: 5px 20px;
   min-height: 36px;
   border-radius: 24px;
+  outline: none;
   font-size: 1rem;
   background-color: transparent;
   border: 1px solid #00ded0;
@@ -89,4 +93,47 @@ input:focus {
   background-color: white;
   color: black;
   border: none;
+}
+
+.status {
+  color: black;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  -webkit-text-fill-color: white;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  -webkit-text-fill-color: white;
+}
+
+::placeholder {
+  -webkit-text-fill-color: white;
+}
+
+@media (max-width: 700px) {
+  .black-signin-wall-container form {
+    color: #fafafa;
+    background-color: black;
+    padding: 60px;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+  }
 }

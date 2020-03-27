@@ -1,20 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './styles/index.css';
 import SignedIn from './SignedIn';
 import SignedOut from './SignedOut';
+import { connect } from 'react-redux';
 
-const Navbar = () => {
+const Navbar = props => {
+  const { authStatus } = props;
+  const links = authStatus.uid ? <SignedIn /> : <SignedOut />;
   return (
     <div className="nav">
       <div className="nav-wrapper">
-        <div className="container">
-          <SignedIn />
-          <SignedOut />
-        </div>
+        <div className="container">{links}</div>
       </div>
     </div>
   );
 };
-
-export default Navbar;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    authStatus: state.firebase.auth
+  };
+};
+export default connect(mapStateToProps)(Navbar);

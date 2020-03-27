@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import './styles/index.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   render() {
+    const { authStatus } = this.props;
+    if (!authStatus.uid) return <Redirect to="/signin" />;
     return (
       <div className="dashboard-container">
         <div className="dashboard-side">
           <div className="dashboard-side-item-container">
-            <NavLink to="/" className="dashboard-side-item">
+            <NavLink to="/project1" className="dashboard-side-item">
               套裝1
             </NavLink>
-            <NavLink to="/" className="dashboard-side-item">
+            <NavLink to="/project2" className="dashboard-side-item">
               套裝2
             </NavLink>
           </div>
@@ -33,3 +36,11 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    authStatus: state.firebase.auth
+  };
+};
+export default connect(mapStateToProps)(Dashboard);

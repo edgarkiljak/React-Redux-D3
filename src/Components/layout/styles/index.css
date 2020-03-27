@@ -43,7 +43,6 @@ ul li a {
   border-bottom: solid 1px transparent;
   padding: 10px;
   font-size: 13px;
-  font-weight: bold;
 }
 
 ul li a:hover {
@@ -54,8 +53,23 @@ ul li a:hover {
 }
 
 .avatar {
-  background-color: #00ded0;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #00ded0
+  );
   border-radius: 100%;
+  border: 1px solid black;
 }
 .avatar:hover {
   color: white !important;

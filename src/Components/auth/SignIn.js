@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/index.css';
-
+import { connect } from 'react-redux';
+import { signIn } from '../../Redux/actions/authActions';
 class SignIn extends Component {
   state = {
     email: '',
@@ -13,10 +14,12 @@ class SignIn extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.signIn(this.state);
   };
 
   render() {
+    const { authError } = this.props;
+    const warningSign = '⚠️';
     return (
       <div className="black-signin-wall-container">
         <form onSubmit={this.handleSubmit} className="black-signin-wall-form">
@@ -27,7 +30,7 @@ class SignIn extends Component {
             <input
               type="email"
               id="email"
-              placeholder="email@address.com"
+              placeholder="e.g. email@address.com"
               onChange={this.handleChange}
             ></input>
           </div>
@@ -36,9 +39,16 @@ class SignIn extends Component {
             <input
               type="password"
               id="password"
-              placeholder="wehopeitsnot123"
+              placeholder="e.g.  Test123"
               onChange={this.handleChange}
             ></input>
+          </div>
+          <div className="status">
+            {authError ? (
+              <p>
+                {authError} {warningSign}
+              </p>
+            ) : null}
           </div>
           <div className="input-field">
             <button className="btn">Login</button>
@@ -48,4 +58,19 @@ class SignIn extends Component {
     );
   }
 }
-export default SignIn;
+
+const mapStateToPros = state => {
+  const { auth } = state;
+  console.log(state.auth);
+  console.log(auth.authError);
+  return { authError: auth.authError };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signIn: creds => {
+      dispatch(signIn(creds));
+    }
+  };
+};
+export default connect(mapStateToPros, mapDispatchToProps)(SignIn);
