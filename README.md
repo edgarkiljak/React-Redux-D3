@@ -19,3 +19,8 @@ First, install all the dependencies. ⚠️
  yarn install
  yarn
 ```
+
+**Default credentials** 🔒:
+
+- user: `test@test.co.uk`
+- password: `Test123`
