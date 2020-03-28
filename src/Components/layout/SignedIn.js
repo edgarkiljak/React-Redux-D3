@@ -3,7 +3,10 @@ import { NavLink } from 'react-router-dom';
 import './styles/index.css';
 import { signOut } from '../../Redux/actions/authActions';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
+const signOutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 const SignedIn = props => {
   return (
     <ul className="right">
@@ -14,7 +17,7 @@ const SignedIn = props => {
       </li>
       <li>
         <a href="#" onClick={props.signOut} to="/">
-          LOG OUT
+          Sign out {signOutIcon}
         </a>
       </li>
     </ul>

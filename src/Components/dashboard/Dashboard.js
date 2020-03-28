@@ -1,29 +1,55 @@
 import React, { Component } from 'react';
 import './styles/index.css';
+import PropTypes from 'prop-types';
 import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loadDBData } from '../../Redux/actions/dataActions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faServer, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 class Dashboard extends Component {
+  componentDidMount() {
+    this.props.loadDBData();
+  }
+
   render() {
     const { authStatus } = this.props;
     if (!authStatus.uid) return <Redirect to="/signin" />;
+    const serverIcon = <FontAwesomeIcon icon={faServer} />;
+    const dbIcon = <FontAwesomeIcon icon={faDatabase} />;
     return (
       <div className="dashboard-container">
         <div className="dashboard-side">
           <div className="dashboard-side-item-container">
-            <NavLink to="/project1" className="dashboard-side-item">
-              套裝1
-            </NavLink>
-            <NavLink to="/project2" className="dashboard-side-item">
-              套裝2
-            </NavLink>
+            <h2>Workloads &#x25BE;</h2>
+            <ul>
+              <li>
+                <NavLink to="/pods" className="dashboard-side-item">
+                  {serverIcon} Servers
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/repset" className="dashboard-side-item">
+                  {dbIcon} Database Set
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+          <div className="dashboard-side-item-version">
+            <p>Test v0.0.1</p>
           </div>
         </div>
         <div className="dashboard-main">
-          <div className="dashboard-main-top">
-            <div className="dashboard-main-top-item-container">
-              <div className="dashboard-main-top-item dashboard-main-top-item-1"></div>
-              <div className="dashboard-main-top-item dashboard-main-top-item-2"></div>
+          <div className="dashboard-main-top-container">
+            <div className="dashboard-main-top-left">
+              <div className="dashboard-main-top-item-container">
+                <div className="dashboard-main-top-item dashboard-main-top-item-1"></div>
+              </div>
+            </div>
+            <div className="dashboard-main-top-right">
+              <div className="dashboard-main-top-item-container">
+                <div className="dashboard-main-top-item dashboard-main-top-item-2"></div>
+              </div>
             </div>
           </div>
           <div className="dashboard-main-bottom">
@@ -37,10 +63,18 @@ class Dashboard extends Component {
   }
 }
 
+Dashboard.propTypes = {
+  loadDBData: PropTypes.array.isRequired
+};
+
+const mapDispatchToProps = dispatch => ({
+  loadDBData: () => dispatch(loadDBData())
+});
+
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    authStatus: state.firebase.auth
+    authStatus: state.firebase.auth,
+    data: state.data.data
   };
 };
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
