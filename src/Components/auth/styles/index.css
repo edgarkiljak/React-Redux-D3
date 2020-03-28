@@ -27,6 +27,7 @@
   );
   padding: 100px;
   position: absolute;
+  font-family: Roboto, sans-serif;
   font-weight: bold;
   left: 50%;
   top: 10%;

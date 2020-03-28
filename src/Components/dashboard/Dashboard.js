@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { loadDBData } from '../../Redux/actions/dataActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faServer, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import CPULineChart from '../visualisations/CPULineChart';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -13,7 +14,8 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { authStatus } = this.props;
+    const { authStatus, data } = this.props;
+    console.log(data);
     if (!authStatus.uid) return <Redirect to="/signin" />;
     const serverIcon = <FontAwesomeIcon icon={faServer} />;
     const dbIcon = <FontAwesomeIcon icon={faDatabase} />;
@@ -43,7 +45,9 @@ class Dashboard extends Component {
           <div className="dashboard-main-top-container">
             <div className="dashboard-main-top-left">
               <div className="dashboard-main-top-item-container">
-                <div className="dashboard-main-top-item dashboard-main-top-item-1"></div>
+                <div className="dashboard-main-top-item dashboard-main-top-item-1">
+                  <CPULineChart data={data[0]} />
+                </div>
               </div>
             </div>
             <div className="dashboard-main-top-right">
@@ -63,10 +67,6 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
-  loadDBData: PropTypes.array.isRequired
-};
-
 const mapDispatchToProps = dispatch => ({
   loadDBData: () => dispatch(loadDBData())
 });
@@ -74,7 +74,7 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => {
   return {
     authStatus: state.firebase.auth,
-    data: state.data.data
+    data: state.dbData.dbData
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

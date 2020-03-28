@@ -7,7 +7,7 @@ const dataReducer = (state = initialState, action) => {
     case 'DBDATA_LOADED':
       return {
         ...state,
-        data: action.payload
+        dbData: action.payload
       };
     default:
       return state;
