@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/index.css';
+import './index.css';
 import SignedIn from './SignedIn';
 import SignedOut from './SignedOut';
 import { connect } from 'react-redux';

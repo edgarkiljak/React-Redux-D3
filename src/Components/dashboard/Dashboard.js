@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './styles/index.css';
-import PropTypes from 'prop-types';
+import './index.css';
 import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loadDBData } from '../../Redux/actions/dataActions';
+import { loadDBData } from '../../redux/actions/dataActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faServer, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import CPULineChart from '../visualisations/CPULineChart';

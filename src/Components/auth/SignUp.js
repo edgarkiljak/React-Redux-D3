@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/index.css';
+import './index.css';
 
 class SignUp extends Component {
   state = {

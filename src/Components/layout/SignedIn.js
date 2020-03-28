@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './styles/index.css';
-import { signOut } from '../../Redux/actions/authActions';
+import './index.css';
+import { signOut } from '../../redux/actions/authActions';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';

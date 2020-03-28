@@ -10,21 +10,7 @@
 
 .black-signin-wall-container form {
   color: #000000;
-  background-image: linear-gradient(
-    to right top,
-    #d16ba5,
-    #c777b9,
-    #ba83ca,
-    #aa8fd8,
-    #9a9ae1,
-    #8aa7ec,
-    #79b3f4,
-    #69bff8,
-    #52cffe,
-    #41dfff,
-    #46eefa,
-    #00ded0
-  );
+  background-color: lightcyan;
   padding: 100px;
   position: absolute;
   font-family: Roboto, sans-serif;
@@ -89,12 +75,12 @@ input:focus {
   font-size: 1rem;
   font-weight: bold;
   background-color: transparent;
-  border: 1px solid #00ded0;
+  border: 1px solid #000000;
 }
 
 .btn:hover {
-  background-color: white;
-  color: black;
+  background-color: #000000;
+  color: #fafafa;
   border: none;
 }
 
