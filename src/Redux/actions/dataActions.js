@@ -1,4 +1,4 @@
-import { DBDATA_LOADED } from './action-types';
+import { DBDATA_LOADED, UPDATE_SELECTED_SERVER } from './action-types';
 import { getDBdata } from '../../data/index';
 
 export const loadDBData = () => dispatch => {
@@ -8,4 +8,15 @@ export const loadDBData = () => dispatch => {
       payload: data
     })
   );
+};
+
+/**
+ * index of the maching currently in view
+ * @param {number} index
+ */
+export const updateSelectedServer = index => dispatch => {
+  dispatch({
+    type: UPDATE_SELECTED_SERVER,
+    payload: index
+  });
 };

@@ -5,3 +5,4 @@ export const SIGNOUT_SUCCESS = 'SIGNOUT_SUCCESS';
 
 // Load data
 export const DBDATA_LOADED = 'DBDATA_LOADED';
+export const UPDATE_SELECTED_SERVER = 'UPDATE_SELECTED_SERVER';

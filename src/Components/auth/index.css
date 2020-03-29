@@ -10,7 +10,7 @@
 
 .black-signin-wall-container form {
   color: #000000;
-  background-color: lightcyan;
+  background-color: #e6e2dd;
   padding: 100px;
   position: absolute;
   font-family: Roboto, sans-serif;
@@ -119,8 +119,6 @@ select:-webkit-autofill:focus {
 
 @media (max-width: 700px) {
   .black-signin-wall-container form {
-    color: #000000;
-    background-color: black;
     padding: 60px;
     position: absolute;
     left: 50%;

@@ -5,5 +5,5 @@ const randomDelayPromise = data => {
 };
 
 export const getDBdata = () => {
-  return randomDelayPromise(require('./database.json'));
+  return randomDelayPromise(require('./servers.json'));
 };
