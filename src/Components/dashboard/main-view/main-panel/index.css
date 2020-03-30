@@ -17,3 +17,15 @@
   margin: 0;
   padding: 0;
 }
+
+.panel h3 {
+  text-align: center;
+}
+
+.CPULineChart .area {
+  fill: #4b9fe1;
+}
+
+.MemoryLineChart .area {
+  fill: green;
+}

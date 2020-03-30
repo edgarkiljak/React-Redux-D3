@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import BottomBarChart from '../../../visualisations/BottomBarChart';
 
 const styles = {
   fontSize: '8px'
@@ -52,10 +53,14 @@ class BottomPanel extends React.Component {
                 <span>{task.clusterIP}</span>
               </div>
               <div className="column cpu-usage">
-                <span style={styles}>d3 manipulation</span>
+                <span className="cpu-usage-chart">
+                  <BottomBarChart data={task.cpuUsage} />
+                </span>
               </div>
               <div className="column memory-usage">
-                <span style={styles}>d3 manipulation</span>
+                <span className="memory-usage-chart">
+                  <BottomBarChart data={task.memoryUsage} />
+                </span>
               </div>
             </div>
           ))}

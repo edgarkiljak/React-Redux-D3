@@ -35,3 +35,17 @@
   color: #10008a;
   font-weight: 600;
 }
+
+.cpu-usage-chart,
+.memory-usage-chart {
+  display: flex;
+  width: 50px;
+  background-color: lightgrey;
+}
+.cpu-usage-chart .area {
+  fill: #4b9fe1;
+}
+
+.memory-usage-chart .area {
+  fill: green;
+}

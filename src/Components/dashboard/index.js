@@ -32,7 +32,10 @@ class Dashboard extends Component {
           data={dashboard.data}
           onChange={this.handleServerChange}
         />
-        <MainView data={dashboard.data[dashboard.selectedServer]} />
+        <MainView
+          selectedItem={0}
+          data={dashboard.data[dashboard.selectedServer]}
+        />
       </div>
     );
   }

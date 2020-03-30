@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import TopLineChart from '../../../visualisations/TopLineChart';
 
 class MainPanel extends React.Component {
   render() {
@@ -10,13 +11,14 @@ class MainPanel extends React.Component {
     return (
       <div className="panel-container">
         <div className="panel">
-          <h3>{type === 'cpu' ? 'CPU Usage' : 'Memory Usage'}</h3>
-          d3 manipulation
-          <code>
-            <pre style={{ maxHeight: 280, overflow: 'scroll' }}>
-              {JSON.stringify(data, undefined, 2)}
-            </pre>
-          </code>
+          <h3>
+            {type === 'cpu'
+              ? 'CPU Usage (accummulated)'
+              : 'Memory Usage (accummulated)'}
+          </h3>
+          <div className={type === 'cpu' ? 'CPULineChart' : 'MemoryLineChart'}>
+            <TopLineChart data={data} />
+          </div>
         </div>
       </div>
     );
