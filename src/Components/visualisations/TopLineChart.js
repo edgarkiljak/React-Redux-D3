@@ -16,6 +16,17 @@ class TopLineChart extends Component {
     areaGenerator: d3.area().curve(d3.curveLinear)
   };
 
+  //Draw Axes
+  componentDidMount() {
+    d3.select(this.refs.xAxis).call(this.xAxis);
+    d3.select(this.refs.yAxis).call(this.yAxis);
+  }
+  //Draw axes
+  componentDidUpdate() {
+    d3.select(this.refs.xAxis).call(this.xAxis);
+    d3.select(this.refs.yAxis).call(this.yAxis);
+  }
+
   xAxis = d3
     .axisBottom()
     .scale(this.state.xScale)
@@ -54,12 +65,6 @@ class TopLineChart extends Component {
 
     return { cpuLine, cpuArea };
   }
-
-  componentDidUpdate() {
-    d3.select(this.refs.xAxis).call(this.xAxis);
-    d3.select(this.refs.yAxis).call(this.yAxis);
-  }
-
   render() {
     return (
       <svg width={width} height={height}>
