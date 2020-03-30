@@ -18,7 +18,7 @@
 
 .bottom-panel .column {
   width: 20%;
-  padding: 10px 20px;
+  padding: 7px 20px;
 }
 
 .bottom-panel .column:last-child {
@@ -48,4 +48,10 @@
 
 .memory-usage-chart .area {
   fill: green;
+}
+
+.cpu-usage,
+.memory-usage {
+  align-items: baseline;
+  display: flex;
 }

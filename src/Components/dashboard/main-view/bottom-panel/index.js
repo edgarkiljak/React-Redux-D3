@@ -28,10 +28,10 @@ class BottomPanel extends React.Component {
             <span>Cluster IP</span>
           </div>
           <div className="column cpu-usage">
-            <span>CPU</span>
+            <span>CPU (cores)</span>
           </div>
           <div className="column memory-usage">
-            <span>Memory</span>
+            <span>Memory (bytes) </span>
           </div>
         </div>
         <div className="table-body">
@@ -56,11 +56,17 @@ class BottomPanel extends React.Component {
                 <span className="cpu-usage-chart">
                   <BottomBarChart data={task.cpuUsage} />
                 </span>
+                &nbsp;
+                <p style={{ fontSize: '8px' }}>{task.cpuUsage[0].high}</p>
               </div>
               <div className="column memory-usage">
                 <span className="memory-usage-chart">
                   <BottomBarChart data={task.memoryUsage} />
                 </span>
+                <p style={{ fontSize: '8px' }}>
+                  &nbsp;
+                  {task.memoryUsage[0].high} MiB
+                </p>
               </div>
             </div>
           ))}
