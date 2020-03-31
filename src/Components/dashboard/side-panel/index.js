@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faServer } from '@fortawesome/free-solid-svg-icons';
 
-class SidePanel extends React.Component {
+class SidePanel extends Component {
   handleChange = index => {
     this.props.onChange(index);
   };

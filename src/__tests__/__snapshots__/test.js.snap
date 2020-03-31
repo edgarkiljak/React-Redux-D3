@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`data test object structure 1`] = `
+Object {
+  "age": 27,
+  "cpu": Array [
+    Object {
+      "date": Any<Date>,
+      "high": Any<Number>,
+      "low": Any<Number>,
+    },
+  ],
+  "id": Any<String>,
+  "memory": Array [
+    Object {
+      "date": Any<Date>,
+      "high": Any<Number>,
+      "low": Any<Number>,
+    },
+  ],
+  "node": Any<String>,
+  "restarts": Any<Number>,
+  "runningTasks": Array [
+    Object {
+      "age": Any<Number>,
+      "clusterIP": Any<String>,
+      "cpuUsage": Array [
+        Object {
+          "date": Any<Date>,
+          "high": Any<Number>,
+          "low": Any<Number>,
+        },
+      ],
+      "label": Any<String>,
+      "memoryUsage": Array [
+        Object {
+          "date": Any<Date>,
+          "high": Any<Number>,
+          "low": Any<Number>,
+        },
+      ],
+      "name": Any<String>,
+      "status": Any<String>,
+    },
+  ],
+  "serverName": Any<String>,
+  "status": Any<String>,
+}
+`;
+
+exports[`data test will fail every time 1`] = `
+Object {
+  "createdAt": 2020-03-31T12:44:52.318Z,
+  "id": 3,
+  "name": "LeBron James",
+}
+`;

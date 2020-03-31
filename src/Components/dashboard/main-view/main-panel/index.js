@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './index.css';
 import TopLineChart from '../../../visualisations/TopLineChart';
 
-class MainPanel extends React.Component {
+class MainPanel extends Component {
   render() {
     const { data, type } = this.props;
     console.log('TYPE ====', type);
@@ -17,7 +17,7 @@ class MainPanel extends React.Component {
               : 'Memory Usage (accummulated)'}
           </h3>
           <div className={type === 'cpu' ? 'CPULineChart' : 'MemoryLineChart'}>
-            <TopLineChart data={data} />
+            <TopLineChart data={data} type={type} />
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import MainPanel from './main-panel';
 import BottomPanel from './bottom-panel';
 import './index.css';
 
-class MainView extends React.Component {
+class MainView extends Component {
   render() {
     const { data } = this.props;
     return (

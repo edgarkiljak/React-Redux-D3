@@ -1,4 +1,6 @@
 .bottom-panel {
+  display: flex;
+  flex-direction: column;
   margin-top: 17px;
   background-color: #e6e2dd;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1), 0 3px 1px rgba(0, 0, 0, 0.02);
@@ -19,6 +21,7 @@
 .bottom-panel .column {
   width: 20%;
   padding: 7px 20px;
+  font-size: 12px;
 }
 
 .bottom-panel .column:last-child {
@@ -54,4 +57,62 @@
 .memory-usage {
   align-items: baseline;
   display: flex;
+}
+
+button {
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  background: 0 0;
+  cursor: pointer !important;
+  line-height: 1;
+  cursor: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .side-panel {
+    width: 100%;
+  }
+  .panel-container {
+    width: 61%;
+    height: 400px;
+    left: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .bottom-panel .row {
+    align-items: inherit;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bottom-panel .row {
+    align-items: inherit;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bottom-panel .row {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    border-bottom: 1px solid #dfdfdf;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bottom-panel .row {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    border-bottom: 1px solid #dfdfdf;
+  }
 }

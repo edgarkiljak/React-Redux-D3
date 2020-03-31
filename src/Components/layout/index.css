@@ -41,9 +41,24 @@ ul li a:hover {
   padding: 10px;
 }
 
-@media (max-width: 700px) {
+@media screen and (min-width: 900px) {
+  .container {
+    right: -60px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    right: -60px;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .dashboard-side {
     width: 90%;
+  }
+  .nav-wrapper {
+    left: 40%;
   }
 
   ul li a {
@@ -51,11 +66,19 @@ ul li a:hover {
   }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .container {
     width: 90%;
+    right: -60px;
   }
 
+  .nav-wrapper {
+    left: 40%;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    transform: translateX(-50%);
+  }
   ul li a {
     font-size: 12px;
   }

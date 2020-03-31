@@ -1,6 +1,7 @@
 .panel-container {
   width: 49.5%;
   height: 400px;
+  display: flex;
   box-sizing: border-box;
   padding: 10px;
   background-color: #e6e2dd;
@@ -22,10 +23,13 @@
   text-align: center;
 }
 
-.CPULineChart .area {
-  fill: #4b9fe1;
+.CPULineChart,
+.MemoryLineChart {
+  width: 100%;
+  height: 100%;
 }
-
-.MemoryLineChart .area {
-  fill: green;
+svg {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }

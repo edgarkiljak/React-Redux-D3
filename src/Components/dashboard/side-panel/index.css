@@ -37,3 +37,31 @@
 .side-panel ul li.active-server {
   color: grey;
 }
+
+@media screen and (max-width: 700px) {
+  .side-panel {
+    width: 100%;
+  }
+  .panel-container {
+    width: 61%;
+    height: 400px;
+    left: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .side-panel {
+    width: 100%;
+  }
+  .panel-container {
+    width: 61%;
+    height: 400px;
+    left: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}
