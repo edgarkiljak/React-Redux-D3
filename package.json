@@ -20,6 +20,7 @@
     "firebase": "^7.12.0",
     "font-awesome": "^4.7.0",
     "material-ui": "^0.20.2",
+    "netlify-cli": "^2.40.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
