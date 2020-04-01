@@ -10,7 +10,7 @@ class TopLineChart extends Component {
     cpuLine: null, // svg path command for all cpu points
     cpuArea: null,
     // d3 helpers
-    xScale: d3.scaleTime().range([margin.left, width - margin.right]),
+    xScale: d3.scaleLinear().range([margin.left, width - margin.right]),
     yScale: d3.scaleLinear().range([height - margin.bottom, margin.top]),
     lineGenerator: d3.line().curve(d3.curveLinear),
     areaGenerator: d3.area().curve(d3.curveLinear)
@@ -75,17 +75,17 @@ class TopLineChart extends Component {
     const { yScale, xScale, lineGenerator, areaGenerator } = prevState;
 
     // data has changed, so recalculate scale domains
-    const timeDomain = d3.extent(data, d => new Date(d.date));
+    const timeDomain = d3.max(data, d => d.low);
     const cpuMax = d3.max(data, d => d.high);
-    xScale.domain(timeDomain);
+    xScale.domain([0, timeDomain]);
     yScale.domain([0, cpuMax]);
 
     // Calculate line for CPU
-    lineGenerator.x(d => xScale(new Date(d.date)));
+    lineGenerator.x(d => xScale(d.low));
     lineGenerator.y(d => yScale(d.high));
 
     // Area line for CPU
-    areaGenerator.x(d => xScale(new Date(d.date)));
+    areaGenerator.x(d => xScale(d.low));
     areaGenerator.y0(d => yScale(0));
     areaGenerator.y1(d => yScale(d.high));
 
