@@ -99,6 +99,7 @@ class TopLineChart extends Component {
     const { type } = this.props;
     return (
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         viewBox="0 0 500 300"

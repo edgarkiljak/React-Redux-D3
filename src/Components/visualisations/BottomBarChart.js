@@ -44,7 +44,7 @@ class BottomBarChart extends Component {
 
   render() {
     return (
-      <svg width={width} height={height}>
+      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height}>
         <path d={this.state.cpuArea} className="area" fill="red" />
         <g ref="xAxis" transform={`translate(0, ${height - margin.bottom})`} />
         <g ref="yAxis" transform={`translate(${margin.left}, 0)`} />
