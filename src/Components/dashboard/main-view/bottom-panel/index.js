@@ -6,7 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSortDown,
   faSortUp,
-  faSort
+  faSort,
+  faCheckCircle,
+  faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
@@ -14,27 +16,29 @@ const styles = {
 };
 class BottomPanel extends Component {
   state = {
-    currentSort: 'Sort'
+    currentSort: 'Up',
+    category: ''
   };
-
-  onSortChange = () => {
+  onSortChange = category => {
+    debugger;
     const { currentSort } = this.state;
+    let direction;
+    if (category !== this.state.category) {
+      direction = 'Up';
+    } else {
+      direction = currentSort === 'Down' ? 'Up' : 'Down';
+    }
 
-    let nextSort;
-
-    if (currentSort === 'Down') nextSort = 'Up';
-    else if (currentSort === 'Up') nextSort = 'Sort';
-    else if (currentSort === 'Sort') nextSort = 'Down';
-
-    console.log(nextSort);
     this.setState({
-      currentSort: nextSort
+      currentSort: direction,
+      category: category
     });
   };
 
   render() {
+    console.log(this.state.category, this.state.currentSort);
+    const { currentSort, category } = this.state;
     const { runningTasks } = this.props;
-    const { currentSort } = this.state;
 
     return (
       runningTasks.length >= 0 && (
@@ -42,9 +46,27 @@ class BottomPanel extends Component {
           <div className="table-header row">
             <div className="column name">
               <span>Name</span>
+              <button
+                id="btn-name"
+                onClick={() => {
+                  this.onSortChange('name');
+                }}
+              >
+                &nbsp;
+                <FontAwesomeIcon icon={faSort} />
+              </button>
             </div>
             <div className="column task-status">
               <span>Status</span>
+              <button
+                id="btn-status"
+                onClick={() => {
+                  this.onSortChange('status');
+                }}
+              >
+                &nbsp;
+                <FontAwesomeIcon icon={faSort} />
+              </button>
             </div>
             <div className="column label">
               <span>Label</span>
@@ -52,7 +74,12 @@ class BottomPanel extends Component {
             <div className="column age">
               <span>
                 Age
-                <button onClick={this.onSortChange}>
+                <button
+                  id="btn-age"
+                  onClick={() => {
+                    this.onSortChange('age');
+                  }}
+                >
                   &nbsp;
                   <FontAwesomeIcon icon={faSort} />
                 </button>
@@ -63,28 +90,27 @@ class BottomPanel extends Component {
             </div>
             <div className="column cpu-usage">
               <span>CPU (cores)</span>
-              <button onClick={this.onSortChange}>
-                &nbsp;
-                <FontAwesomeIcon icon={faSort} />
-              </button>
             </div>
             <div className="column memory-usage">
               <span>Memory (bytes) </span>
-              <button onClick={this.onSortChange}>
-                &nbsp;
-                <FontAwesomeIcon icon={faSort} />
-              </button>
             </div>
           </div>
           <div className="table-body">
             {[...runningTasks]
-              .sort(sortTypes[currentSort].fn)
+              .sort(sortTypes[currentSort].fn[category])
               .map((task, index) => (
                 <div className="table-item row" key={index}>
                   <div className="column name">
+                    {task.status === 'Running' ? (
+                      <FontAwesomeIcon icon={faCheckCircle} />
+                    ) : (
+                      <FontAwesomeIcon icon={faTimesCircle} />
+                    )}
+                    &nbsp;
                     <span>{task.name}</span>
                   </div>
                   <div className="column task-status">
+                    <span></span>
                     <span>{task.status}</span>
                   </div>
                   <div className="column label">

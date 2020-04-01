@@ -92,10 +92,10 @@
     ],
     "runningTasks": [
       {
-        "status": "Running",
+        "status": "Unavailable",
         "label": "task-label",
         "age": 23,
-        "name": "task-one",
+        "name": "task-1",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -136,7 +136,7 @@
         "status": "Running",
         "label": "task-label",
         "age": 27,
-        "name": "task-two",
+        "name": "task-2",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -174,10 +174,10 @@
         ]
       },
       {
-        "status": "Running",
+        "status": "Unavailable",
         "label": "task-label",
         "age": 21,
-        "name": "task-three",
+        "name": "task-3",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -218,7 +218,7 @@
         "status": "Running",
         "label": "task-label",
         "age": 10,
-        "name": "task-four",
+        "name": "task-4",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -259,7 +259,7 @@
         "status": "Running",
         "label": "task-label",
         "age": 1440,
-        "name": "task-five",
+        "name": "task-5",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -304,7 +304,7 @@
     "node": "Minikube",
     "status": "Running",
     "restarts": 0,
-    "age": "27 ",
+    "age": 27,
     "cpu": [
       {
         "date": "2015-10-1 1:00 PM GMT+1:00",
@@ -394,7 +394,7 @@
         "status": "Running",
         "label": "label 1",
         "age": 3,
-        "name": "task-one",
+        "name": "task-1",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -432,10 +432,10 @@
         ]
       },
       {
-        "status": "Running",
+        "status": "Unavailable",
         "label": "label 2",
         "age": 9,
-        "name": "task-two",
+        "name": "task-2",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -476,7 +476,7 @@
         "status": "Running",
         "label": "label 3",
         "age": 11,
-        "name": "task-three",
+        "name": "task-3",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -517,7 +517,7 @@
         "status": "Running",
         "label": "label 4",
         "age": 12,
-        "name": "task-four",
+        "name": "task-4",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -558,7 +558,7 @@
         "status": "Running",
         "label": "label 5",
         "age": 100,
-        "name": "task-five",
+        "name": "task-5",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -693,7 +693,7 @@
         "status": "Running",
         "label": "task-label",
         "age": 23,
-        "name": "task-one",
+        "name": "task-1",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -731,10 +731,10 @@
         ]
       },
       {
-        "status": "Running",
+        "status": "Unavailable",
         "label": "task-label",
         "age": 27,
-        "name": "task-two",
+        "name": "task-2",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -775,7 +775,7 @@
         "status": "Running",
         "label": "task-label",
         "age": 21,
-        "name": "task-three",
+        "name": "task-3",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -816,7 +816,7 @@
         "status": "Running",
         "label": "task-label",
         "age": 10,
-        "name": "task-four",
+        "name": "task-4",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {
@@ -854,10 +854,10 @@
         ]
       },
       {
-        "status": "Running",
+        "status": "Unavailable",
         "label": "task-label",
         "age": 1347,
-        "name": "task-five",
+        "name": "task-5",
         "clusterIP": "10.148.0.3",
         "cpuUsage": [
           {

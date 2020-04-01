@@ -106,8 +106,9 @@ class TopLineChart extends Component {
       >
         <defs>
           <linearGradient id="areaGradient" x1="0%" y1="70%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="lightcyan" stop-opacity="0.6" />
-            <stop offset="80%" stop-color="#e6e2dd" stop-opacity="0" />
+            <stop offset="0%" stopColor="#FF4653" stopOpacity="0.6" />
+
+            <stop offset="80%" stopColor="#e6e2dd" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -119,12 +120,12 @@ class TopLineChart extends Component {
         <g
           ref="xAxis"
           transform={`translate(0, ${height - margin.bottom} )`}
-          stroke-width="0"
+          strokeWidth="0"
         />
         <g ref="yAxis" transform={`translate(${margin.left}, 0)`}>
           <text
             fill="grey"
-            font-size="15"
+            fontSize="15"
             transform={`translate(-50, ${80} ) rotate(-90)`}
           >
             {type === 'cpu' ? 'CPU (cores)' : 'Memory (bytes)'}

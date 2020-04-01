@@ -1,12 +1,21 @@
 const sortTypes = {
   Up: {
-    fn: (a, b) => (a.age - b.age ? 1 : -1)
+    fn: {
+      age: (a, b) => (a.age > b.age ? -1 : a.age > b.age ? 1 : 0),
+      status: (a, b) => (a.status > b.status ? 1 : -1),
+      name: (a, b) => {
+        return a.name < b.name ? 1 : -1;
+      }
+    }
   },
   Down: {
-    fn: (a, b) => (a - b ? 1 : -1)
-  },
-  Sort: {
-    fn: (a, b) => 0
+    fn: {
+      age: (a, b) => (a.age < b.age ? -1 : a.age > b.age ? 1 : 0),
+      status: (a, b) => (a.status < b.status ? 1 : -1),
+      name: (a, b) => {
+        return a.name > b.name ? 1 : -1;
+      }
+    }
   }
 };
 

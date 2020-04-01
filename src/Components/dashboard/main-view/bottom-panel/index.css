@@ -72,7 +72,12 @@ button {
   line-height: 1;
   cursor: auto;
 }
-
+svg.fa-check-circle path {
+  fill: green;
+}
+svg.fa-times-circle path {
+  fill: #ff6864;
+}
 @media screen and (max-width: 700px) {
   .side-panel {
     width: 100%;

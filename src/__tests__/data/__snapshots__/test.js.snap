@@ -47,5 +47,3 @@ Object {
   "status": Any<String>,
 }
 `;
-
-
